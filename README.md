@@ -2,7 +2,7 @@
 
 ## Overview
 This is a **Kanban Board** built using **React.js** and **Tailwind CSS**, featuring task management with drag-and-drop functionality, a calendar view, priority tasks, and upcoming deadlines. The dashboard also includes **graphs** to visualize task progress.
-
+check it out: super-frangollo-2a18f6.netlify.app
 ## Features
 - 📌 **Task Management:** Create, edit, delete, and move tasks across different columns.
 - 📆 **Calendar View:** Timeline of upcoming deadlines.
