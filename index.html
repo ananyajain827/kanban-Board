@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js/dist/index.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="#" onclick="openHome()">Home</a>
+      <a href="#" onclick="openWeeklyTasks()">Weekly Tasks</a>
+      <a href="dashboard.html" onclick="openDashboard()">Dashboard</a>
+      <a href="#" onclick="openNotifications()">Notifications</a>
+      <a href="#" onclick="logout()">Logout</a>
+      <a href="#" onclick="openTeam()">Team</a>
+      <input type="text" id="search" placeholder="Search tasks..." onkeyup="searchTasks()">
+      <span id="user-score">Your Score: 0</span>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="kanban-board" id="kanban-board">
+      <div class="column" id="todo">
+        <h2>To-Do</h2>
+        <div class="tasks"></div>
+        <button onclick="addTask('todo')">Add Task</button>
+      </div>
+      <div class="column" id="in-progress">
+        <h2>In Progress</h2>
+        <div class="tasks"></div>
+        <button onclick="addTask('in-progress')">Add Task</button>
+      </div>
+      <div class="column" id="done">
+        <h2>Done</h2>
+        <div class="tasks"></div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function openHome() {
+      document.getElementById('main-content').innerHTML = '<h2>Welcome to the Kanban Board</h2>';
+    }
+
+    function openWeeklyTasks() {
+      document.getElementById('main-content').innerHTML = `
+        <h2>Weekly Tasks</h2>
+        <div class="kanban-board">
+          <div class="column" id="monday">
+            <h2>Monday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('monday')">Add Task</button>
+          </div>
+          <div class="column" id="tuesday">
+            <h2>Tuesday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('tuesday')">Add Task</button>
+          </div>
+          <div class="column" id="wednesday">
+            <h2>Wednesday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('wednesday')">Add Task</button>
+          </div>
+          <div class="column" id="thursday">
+            <h2>Thursday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('thursday')">Add Task</button>
+          </div>
+          <div class="column" id="friday">
+            <h2>Friday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('friday')">Add Task</button>
+          </div>
+          <div class="column" id="saturday">
+            <h2>Saturday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('saturday')">Add Task</button>
+          </div>
+          <div class="column" id="sunday">
+            <h2>Sunday</h2>
+            <div class="tasks"></div>
+            <button onclick="addTask('sunday')">Add Task</button>
+          </div>
+        </div>`;
+    }
+
+    function openDashboard() {
+      document.getElementById('main-content').innerHTML = '<h2>Dashboard</h2><p>Overview of your productivity and stats.</p>';
+    }
+
+    function openNotifications() {
+      document.getElementById('main-content').innerHTML = '<h2>Notifications</h2><p>All your notifications will appear here.</p>';
+    }
+
+    function logout() {
+      alert('You have been logged out.');
+      location.reload();
+    }
+
+    function openTeam() {
+      document.getElementById('main-content').innerHTML = '<h2>Team Members</h2><p>List of team members with avatars.</p>';
+    }
+
+    function searchTasks() {
+      let input = document.getElementById('search').value.toLowerCase();
+      let tasks = document.querySelectorAll('.task');
+      tasks.forEach(task => {
+        if (task.textContent.toLowerCase().includes(input)) {
+          task.style.display = "block";
+        } else {
+          task.style.display = "none";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

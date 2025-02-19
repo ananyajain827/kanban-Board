@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+    <!-- Common Styles -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Unique Dashboard Styles -->
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="weekly-tasks.html">Weekly Tasks</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="notifications.html">Notifications</a>
+            <a href="#" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Dashboard</h1>
+        <p>View your key metrics and progress charts here.</p>
+
+        <div id="dashboard-content">
+            <section class="key-metrics">
+                <h2>Key Metrics</h2>
+                <p>Tasks Completed: <span>10</span></p>
+                <p>Pending Tasks: <span>5</span></p>
+            </section>
+
+            <section class="charts">
+                <h2>Progress Charts</h2>
+                <div class="chart-container">
+                    <!-- Insert charts here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
